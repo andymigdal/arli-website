@@ -1,0 +1,108 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import logo from '../assets/arli-logo.png';
+---
+
+<header>
+	<nav>
+		<a class="brand" href="/" aria-label="ARLI Consulting home">
+			<img src={logo.src} alt="ARLI Consulting" />
+		</a>
+
+		<div class="internal-links">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/services">Services</HeaderLink>
+			<HeaderLink href="/projects">Projects</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/contact">Contact</HeaderLink>
+		</div>
+	</nav>
+</header>
+
+<style>
+	header {
+		margin: 0;
+		padding: 0 1.5rem;
+		background: rgba(255, 255, 255, 0.96);
+		border-bottom: 1px solid var(--border);
+		box-shadow: 0 2px 14px rgba(16, 32, 51, 0.06);
+		backdrop-filter: blur(10px);
+	}
+
+	nav {
+		max-width: 1280px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		min-height: 90px;
+		padding: 0 1rem;
+	}
+
+	.brand {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		padding: 0;
+		border-bottom: none;
+	}
+
+	.brand img {
+		height: 120px;
+		width: auto;
+		display: block;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	.internal-links {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+	}
+
+	.internal-links a {
+		color: var(--text);
+		font-size: 0.95rem;
+		font-weight: 650;
+		text-decoration: none;
+		padding: 1.9rem 0 1.75rem;
+		border-bottom: 3px solid transparent;
+	}
+
+	.internal-links a:hover {
+		color: var(--accent);
+	}
+
+	.internal-links a.active {
+		color: var(--accent);
+		border-bottom-color: var(--accent);
+	}
+
+	@media (max-width: 720px) {
+		header {
+			padding: 0 1rem;
+		}
+
+		nav {
+			min-height: auto;
+			padding: 0.9rem 0;
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+
+		.brand img {
+			height: 78px;
+		}
+
+		.internal-links {
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.internal-links a {
+			padding: 0.2rem 0 0.4rem;
+		}
+	}
+</style>

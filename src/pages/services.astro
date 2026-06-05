@@ -1,0 +1,134 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Services | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="hero">
+				<p class="eyebrow">Services</p>
+				<h1>Practical IT, infrastructure and automation services.</h1>
+				<p class="intro">
+					Support for small businesses, enterprise infrastructure projects and rural property technology.
+				</p>
+			</section>
+
+			<section class="services-grid">
+				<article class="card">
+					<h2>Business IT</h2>
+					<ul>
+						<li>Microsoft 365 setup and support</li>
+						<li>Business Wi-Fi and networking</li>
+						<li>Backup solutions</li>
+						<li>Cyber security basics</li>
+						<li>General IT support</li>
+					</ul>
+				</article>
+
+				<article class="card">
+					<h2>Enterprise Infrastructure</h2>
+					<ul>
+						<li>Nutanix consulting</li>
+						<li>VMware infrastructure</li>
+						<li>Storage platforms</li>
+						<li>Backup and recovery</li>
+						<li>Infrastructure project delivery</li>
+					</ul>
+				</article>
+
+				<article class="card">
+					<h2>Rural Technology</h2>
+					<ul>
+						<li>Starlink setup and optimisation</li>
+						<li>Property-wide Wi-Fi</li>
+						<li>Security cameras</li>
+						<li>Gate automation</li>
+						<li>Water monitoring and dashboards</li>
+						<li>Home Assistant automation</li>
+					</ul>
+				</article>
+			</section>
+
+			<section class="cta">
+				<h2>Need something practical solved?</h2>
+				<p>
+					From business systems to rural property monitoring, ARLI Consulting focuses on technology
+					that solves real problems.
+				</p>
+				<a href="/contact">Contact ARLI Consulting →</a>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.hero {
+		padding: 2rem 0;
+	}
+
+	.eyebrow {
+		color: var(--accent);
+		font-weight: 750;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		font-size: 0.85rem;
+	}
+
+	.intro {
+		max-width: 800px;
+		color: var(--muted);
+		font-size: 1.2rem;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.card,
+	.cta {
+		background: var(--panel);
+		border: 1px solid var(--border);
+		border-radius: 18px;
+		padding: 1.5rem;
+		box-shadow: var(--shadow);
+	}
+
+	.card {
+		border-top: 4px solid var(--accent);
+	}
+
+	.card h2 {
+		font-size: 1.35rem;
+	}
+
+	.card ul {
+		padding-left: 1.2rem;
+	}
+
+	.cta {
+		margin-top: 2rem;
+	}
+
+	.cta a {
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	@media (max-width: 900px) {
+		.services-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

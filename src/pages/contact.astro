@@ -1,0 +1,162 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Contact | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+
+		<main>
+			<section class="hero">
+				<p class="eyebrow">Get In Touch</p>
+				<h1>Let's discuss your technology requirements.</h1>
+				<p class="intro">
+					Whether you need help with Microsoft 365, business IT, Starlink,
+					property Wi-Fi, Home Assistant, automation projects or enterprise
+					infrastructure consulting, I'd be happy to help.
+				</p>
+			</section>
+
+			<section class="contact-grid">
+				<div class="card">
+					<h2>Contact Details</h2>
+
+					<p>
+						<strong>Andrew Migdal</strong><br />
+						ARLI Consulting
+					</p>
+
+					<p>
+						📱 <a href="tel:0457196492">0457 196 492</a>
+					</p>
+
+					<p>
+						📧 <a href="mailto:andy@arliconsulting.com.au">andy@arliconsulting.com.au</a>
+					</p>
+
+					<p>
+						📍 Lower Chittering, Western Australia
+					</p>
+				</div>
+
+				<div class="card">
+					<h2>Service Areas</h2>
+
+					<ul>
+						<li>Bullsbrook</li>
+						<li>Lower Chittering</li>
+						<li>Chittering</li>
+						<li>Bindoon</li>
+						<li>Gingin</li>
+						<li>Perth Metropolitan Area</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="services">
+				<div class="card">
+					<h2>Business IT</h2>
+					<ul>
+						<li>Microsoft 365</li>
+						<li>Business Wi-Fi</li>
+						<li>Cyber Security</li>
+						<li>Backup Solutions</li>
+						<li>Cloud Services</li>
+						<li>General IT Support</li>
+					</ul>
+				</div>
+
+				<div class="card">
+					<h2>Enterprise Infrastructure</h2>
+					<ul>
+						<li>Nutanix</li>
+						<li>VMware</li>
+						<li>Storage Platforms</li>
+						<li>Virtualisation</li>
+						<li>Infrastructure Projects</li>
+						<li>Microsoft 365</li>
+						<li>Backup & Recovery</li>
+					</ul>
+				</div>
+
+				<div class="card">
+					<h2>Rural Technology</h2>
+					<ul>
+						<li>Starlink</li>
+						<li>Property Wi-Fi</li>
+						<li>Security Cameras</li>
+						<li>Water Monitoring</li>
+						<li>Gate Automation</li>
+						<li>Home Assistant</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="card">
+				<h2>Recent Projects</h2>
+
+				<ul>
+					<li>Automated rural property gate monitoring and control</li>
+					<li>Bore pump flow monitoring and alerts</li>
+					<li>Water tank level monitoring dashboards</li>
+					<li>Property-wide Wi-Fi deployments</li>
+					<li>Home Assistant automation projects</li>
+				</ul>
+			</section>
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.hero {
+		padding: 3rem 0;
+	}
+
+	.eyebrow {
+		color: var(--accent);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		font-size: 0.85rem;
+	}
+
+	.contact-grid,
+	.services {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.services {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.card {
+		background: var(--panel);
+		border: 1px solid var(--border);
+		border-radius: 18px;
+		padding: 1.5rem;
+		box-shadow: var(--shadow);
+	}
+
+	.card h2 {
+		margin-top: 0;
+	}
+
+	@media (max-width: 900px) {
+		.contact-grid,
+		.services {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
