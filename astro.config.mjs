@@ -5,6 +5,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   site: 'https://arliconsulting.com.au',
+  output: 'static',
   integrations: [mdx(), sitemap()],
   adapter: cloudflare(),
 });
